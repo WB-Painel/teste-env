@@ -14,6 +14,7 @@ const databaseUrl = `mysql://${dbUser}:${dbPassword}/${dbHost}:${dbPort}/${dbNam
 const port = process.env.PORT || 3000;
 
 app.get("/", function (req, res) {
+    alert("$");
     res.send("Olá, Fábrica de Sinapse! " + databaseUrl);
 });
 
