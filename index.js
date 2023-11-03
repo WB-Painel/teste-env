@@ -42,7 +42,8 @@ app.get("/B", function (req, res) {
 });
 
 app.get("/Slot", function (req, res) {
-    console.log(""+req);
+    console.log('Valor postado', req.body);
+   
 res.send(""+getEmoji());
 });
 
