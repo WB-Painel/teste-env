@@ -42,7 +42,7 @@ app.get("/B", function (req, res) {
 });
 
 app.get("/Slot", function (req, res) {
-res.send(9);
+res.send("9");
 });
 
 app.listen(port, () => {
