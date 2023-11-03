@@ -2,7 +2,7 @@ import { createRequire } from "module";
 
 import { saldo } from "./saldo.mjs";
 
-import getEmoji = from "./slot.mjs";
+import { getEmoji } = from "./slot.mjs";
 
 const require = createRequire(import.meta.url);
 
