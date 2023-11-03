@@ -36,7 +36,7 @@ function Emoji(){
 	let minimo = 1;
 	let maximo = 10;
 	
-	let randomEmoji = 
+	let randomnumber = 
 	Math.floor(
 	Math.random()
 	* 
