@@ -1,4 +1,4 @@
-export function SlotVerify(ArrayDeSlots){
+export function Verify(ArrayDeSlots){
   let Lista1 = ArrayDeSlots[0];
   let Lista2 = ArrayDeSlots[1];
   let Lista3 = ArrayDeSlots[2];
