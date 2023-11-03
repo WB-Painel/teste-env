@@ -1,4 +1,4 @@
-let StringListArray = "G:";
+let StringListArray = "";
 export { StringListArray }
 export function Verify(ArrayDeSlots){
   let Lista1 = ArrayDeSlots[0];
