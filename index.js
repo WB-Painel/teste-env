@@ -18,6 +18,8 @@ app.get("/", function (req, res) {
 });
 
 app.get("/A", function (req, res) {
+    res.send("/A");
+    console.log("AAAAAAAAAA");
     return "$";
 });
 
