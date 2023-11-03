@@ -42,10 +42,18 @@ app.get("/B", function (req, res) {
     res.send("B");
 });
 
-app.post("/Slot", function (req, res) {
+app.get("/Slot", function (req, res) {
     console.log('Valor postado', req.body);
    
 res.send(""+getEmoji());
+});
+
+app.post("/K", (req, res) => {
+  const { parcel } = req.body;
+  if (!parcel) {
+    return res.status(400).send({status: "failed"});
+  }
+  res.status(200).send({status: "recieved"});
 });
 
 app.listen(port, () => {
