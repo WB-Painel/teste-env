@@ -32,8 +32,8 @@ export function getEmoji(){
 	}
 
 	listas.push(list_1);
-	listas.push(list_2);
-	listas.push(list_3);
+	//listas.push(list_2);
+	//listas.push(list_3);
 	
 	return listas;
 }
