@@ -25,9 +25,8 @@ app.get("/", function (req, res) {
 });
 
 app.get("/A", function (req, res) {
-    res.send("/A");
+    res.send("Retorno");
     console.log("AAAAAAAAAA");
-    return "$";
 });
 
 app.get("/B", function (req, res) {
