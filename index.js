@@ -1,7 +1,5 @@
 import { createRequire } from "module";
 
-createRequire("dotenv").config();
-
 import { saldo } from "./saldo.mjs";
 
 const express = createRequire("express");
