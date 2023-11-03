@@ -17,6 +17,14 @@ app.get("/", function (req, res) {
     res.send("Olá, Biel! " + databaseUrl);
 });
 
+app.get("/A", function (req, res) {
+    return "$";
+});
+
+app.get("/B", function (req, res) {
+    res.send("B");
+});
+
 app.listen(port, () => {
     console.info("Aplicação rodando em http://localhost:3000");
 });
