@@ -7,7 +7,7 @@ export function getEmoji(){
 	}*/
 	//return count;
 
-	let listas = [];
+	//let listas = [];
 	
 	let list_1 = [];
 	let list_2 = [];
@@ -32,11 +32,11 @@ export function getEmoji(){
 		a3++;
 	}
 
-	listas.push(list_1);
+	//listas.push(list_1);
 	//listas.push(list_2);
 	//listas.push(list_3);
 	
-	return listas;
+	return list_1;
 }
 
 function Emoji(){
