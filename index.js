@@ -4,7 +4,7 @@ import { saldo } from "./saldo.mjs";
 
 import { getEmoji } from "./slot.mjs";
 
-import { SlotVerify } from "./SlotVerify.js";
+import { SlotVerify } from "./SlotVerify.mjs";
 
 const require = createRequire(import.meta.url);
 
