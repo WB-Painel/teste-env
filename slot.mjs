@@ -1,3 +1,3 @@
 export function getEmoji(){
-return "image/louva_deus.png";
+return 9;
 }
