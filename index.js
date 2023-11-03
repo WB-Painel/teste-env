@@ -14,9 +14,9 @@ const databaseUrl = `mysql://${dbUser}:${dbPassword}/${dbHost}:${dbPort}/${dbNam
 const port = process.env.PORT || 3000;
 
 app.use((req, res, next) =>{
-    res.header{"Access-Control-Allow-Origin","*"}
-    res.header{"Access-Control-Allow-Methods","GET"}
-    res.header{"Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Authorization"}
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods","GET");
+    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Authorization");
 });
 app.get("/", function (req, res) {
     res.send("Olá, Biel! " + databaseUrl);
