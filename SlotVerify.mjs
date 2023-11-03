@@ -6,6 +6,6 @@ export function Verify(ArrayDeSlots){
   let a1 = 0;
   while(a1<Lista1.length){
     console.log(Lista1[a1]);
-    a++;
+    a1++;
   }
 }
