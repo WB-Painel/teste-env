@@ -1,10 +1,10 @@
 let count = 3;
-export function getEmoji(){
-	/*if(ModoTurbo){
+export function getEmoji(ModoTurbo){
+	if(ModoTurbo){
 		count=3;
 	}else{
 		count=30;
-	}*/
+	}
 	//return count;
 
 	let list = [];
