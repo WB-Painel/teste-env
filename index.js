@@ -43,7 +43,7 @@ app.get("/B", function (req, res) {
 
 app.get("/Slot", function (req, res) {
 res.send(getEmoji());
-}
+});
 
 app.listen(port, () => {
     console.info("Aplicação rodando em http://localhost:3000");
