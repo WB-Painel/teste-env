@@ -38,7 +38,7 @@ app.get("/", function (req, res) {
 
 app.post("/Slot", function (req, res) {
 console.log('Valor postado', req.body.count);
-res.send(""+getEmoji(true));
+res.send(""+getEmoji(false));
 });
 
 app.post("/K", (req, res) => {
