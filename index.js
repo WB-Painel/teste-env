@@ -4,7 +4,7 @@ import { saldo } from "./saldo.mjs";
 
 import { getEmoji } from "./slot.mjs";
 
-import { SlotVerify } from "./SlotVerify.mjs";
+import { Verify } from "./SlotVerify.mjs";
 
 const require = createRequire(import.meta.url);
 
@@ -42,7 +42,7 @@ app.post("/Slot", function (req, res) {
 //console.log('Valor postado', req.body.NoModoTurbo);
 let ListEmoji = getEmoji(req.body.NoModoTurbo);
 
-SlotVerify(ListEmoji);
+Verify(ListEmoji);
 //console.log("",ListEmoji);
     
 res.send(""+ListEmoji);
