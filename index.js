@@ -4,6 +4,8 @@ import { saldo } from "./saldo.mjs";
 
 import { getEmoji } from "./slot.mjs";
 
+import { SlotVerify } from "./SlotVerify.js";
+
 const require = createRequire(import.meta.url);
 
 require("dotenv").config();
@@ -40,9 +42,15 @@ app.post("/Slot", function (req, res) {
 //console.log('Valor postado', req.body.NoModoTurbo);
 let ListEmoji = getEmoji(req.body.NoModoTurbo);
 
-console.log("",ListEmoji);
+SlotVerify(ListEmoji);
+//console.log("",ListEmoji);
     
 res.send(""+ListEmoji);
+});
+
+app.get("/Verify",function (req, res) {
+
+
 });
 
 app.post("/K", (req, res) => {
