@@ -15,7 +15,6 @@ export function getEmoji(){
 	
 	let a1 = 0;
 	while(a1<count){
-		console.log("$");
 		list_1.push(Emoji());
 		a1++;
 	}
