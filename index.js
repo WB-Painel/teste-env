@@ -42,7 +42,7 @@ app.get("/B", function (req, res) {
     res.send("B");
 });
 
-app.get("/Slot", function (req, res) {
+app.post("/Slot", function (req, res) {
     console.log('Valor postado', req.body);
    
 res.send(""+getEmoji());
