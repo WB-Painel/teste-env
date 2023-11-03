@@ -2,7 +2,11 @@ import { createRequire } from "module";
 
 import { saldo } from "./saldo.mjs";
 
-const express = createRequire("express");
+const require = createRequire(import.meta.url);
+
+require("dotenv").config();
+
+const express = require("express");
 const app = express();
 
 const dbHost = process.env.DB_HOST;
