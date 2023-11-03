@@ -36,7 +36,7 @@ app.get("/", function (req, res) {
     res.send("Olá, Biel! " + databaseUrl);
 });
 
-app.get("/Slot", function (req, res) {
+app.post("/Slot", function (req, res) {
 console.log('Valor postado', req.body);
 res.send(""+getEmoji());
 });
