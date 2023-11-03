@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-import { saldo } from "saldo.js";
+const saldo = require("saldo.js");
 
 const express = require("express");
 const app = express();
