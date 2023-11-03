@@ -10,7 +10,7 @@ export function getEmoji(){
 	//let listas = [];
 	
 	let list_1 = [];
-	//let list_2 = [];
+	let list_2 = [];
 	//let list_3 = [];
 	
 	let a1 = 0;
@@ -18,12 +18,12 @@ export function getEmoji(){
 		list_1.push(Emoji());
 		a1++;
 	}
-	/*
+	
 	let a2 = 0;
 	while(a2<count){
 		list_2.push(getEmoji());
 		a2++;
-	}
+	}/*
 	
 	let a3 = 0;
 	while(a3<count){
