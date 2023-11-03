@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+import { saldo } from "saldo.js";
+
 const express = require("express");
 const app = express();
 
@@ -25,7 +27,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/A", function (req, res) {
-    res.send("Retorno");
+    res.send("Retorno"+saldo);
     console.log("AAAAAAAAAA");
 });
 
