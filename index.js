@@ -2,6 +2,8 @@ import { createRequire } from "module";
 
 import { saldo } from "./saldo.mjs";
 
+import getEmoji = from "./slot.mjs";
+
 const require = createRequire(import.meta.url);
 
 require("dotenv").config();
@@ -38,6 +40,10 @@ app.get("/A", function (req, res) {
 app.get("/B", function (req, res) {
     res.send("B");
 });
+
+app.get("/Slot", function (req, res) {
+res.send(getEmoji());
+}
 
 app.listen(port, () => {
     console.info("Aplicação rodando em http://localhost:3000");
