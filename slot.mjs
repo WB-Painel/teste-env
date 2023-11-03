@@ -13,7 +13,7 @@ export function getEmoji(){
 	
 	let a1 = 0;
 	while(a1<count){
-		list_1.push(getEmoji());
+		list_1.push(Emoji());
 		a1++;
 	}
 	/*
@@ -32,7 +32,7 @@ export function getEmoji(){
 	return list_1;
 }
 
-function getEmoji(){
+function Emoji(){
 	let minimo = 1;
 	let maximo = 10;
 	
