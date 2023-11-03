@@ -8,4 +8,10 @@ export function Verify(ArrayDeSlots){
     console.log(Lista1[a1]);
     a1++;
   }
+
+  let a2 = 0;
+  while(a2<Lista2.length){
+    console.log(Lista2[a2]);
+    a2++;
+  }
 }
