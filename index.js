@@ -1,4 +1,4 @@
-require("dotenv").config();
+createRequire("dotenv").config();
 
 import { saldo } from "./saldo.mjs";
 
