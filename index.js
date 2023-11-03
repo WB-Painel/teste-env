@@ -37,8 +37,12 @@ app.get("/", function (req, res) {
 });
 
 app.post("/Slot", function (req, res) {
-console.log('Valor postado', req.body.NoModoTurbo);
-res.send(""+getEmoji(req.body.NoModoTurbo));
+//console.log('Valor postado', req.body.NoModoTurbo);
+let ListEmoji = getEmoji(req.body.NoModoTurbo);
+
+console.log("",ListEmoji);
+    
+res.send(""+ListEmoji);
 });
 
 app.post("/K", (req, res) => {
