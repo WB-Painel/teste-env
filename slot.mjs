@@ -7,11 +7,11 @@ export function getEmoji(){
 	}*/
 	//return count;
 
-	//let listas = [];
+	let list = [];
 	
 	let list_1 = [];
 	let list_2 = [];
-	//let list_3 = [];
+	let list_3 = [];
 	
 	let a1 = 0;
 	while(a1<count){
@@ -21,21 +21,21 @@ export function getEmoji(){
 	
 	let a2 = 0;
 	while(a2<count){
-		list_2.push(getEmoji());
+		list_2.push(Emoji());
 		a2++;
-	}/*
+	}
 	
 	let a3 = 0;
 	while(a3<count){
-		list_3.push(getEmoji());
+		list_3.push(Emoji());
 		a3++;
-	}*/
+	}
 
-	//listas.push(list_1);
-	//listas.push(list_2);
-	//listas.push(list_3);
+	list.push(list_1);
+	list.push(list_2);
+	list.push(list_3);
 	
-	return list_1;
+	return list;
 }
 
 function Emoji(){
