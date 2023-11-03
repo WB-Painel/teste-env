@@ -2,7 +2,7 @@ require("dotenv").config();
 
 import { saldo } from "./saldo.mjs";
 
-const express = require("express");
+const express = createRequire("express");
 const app = express();
 
 const dbHost = process.env.DB_HOST;
