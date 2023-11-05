@@ -51,9 +51,18 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	
 	console.log("S");
 
-	let ObjectId = SERVER.get("objectId");
+	//let ObjectId = SERVER.get("objectId");
 
-	let Username = SERVER.get("username");
+	//let Username = SERVER.get("username");
+
+	//let Email = SERVER.get("email");
+
+	//let Password = SERVER.get("password");
+
+	SERVER.set("Lista_De_Slots",StringListArray);
+
+	SERVER.save();
+	
 
 	console.log(ObjectId+Username);
 	
