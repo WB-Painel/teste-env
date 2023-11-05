@@ -13,7 +13,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-const Parse = require('parse');
+const Parse = require('parse/node');
 
 const dbHost = process.env.DB_HOST;
 const dbPort = process.env.DB_PORT;
@@ -28,7 +28,6 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
 app.use((req, res, next) =>{
     res.header("Access-Control-Allow-Origin","*");
     res.header("Access-Control-Allow-Methods","GET, POST");
@@ -36,8 +35,11 @@ app.use((req, res, next) =>{
     next();
 })
 
+Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI");
+
 app.get("/", function (req, res) {
     res.send("Olá, Biel! " + databaseUrl);
+    
 });
 
 app.post("/Slot", function (req, res) {
