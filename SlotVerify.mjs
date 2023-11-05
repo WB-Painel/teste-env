@@ -39,24 +39,15 @@ export function Verify(ArrayDeSlots,Information,Parse){
  
  async function updatePlayer(Information,StringListArray) {
         //Retrieve your Parse Object
-  server = new Parse.Query("Game");
-	
-	server.equalTo("SERVER","SERVER_1");
-	
-	server.first().then(function(SERVER){
-
-  if(SERVER){
-console.log("S");
-  }else{
-console.log("N");
-  }
-
-	});
   
- }
-        /*const player = new Parse.Object("UserGame");
+        const player = new Parse.Object("UserGame");
 
         //set the object
+	 if(player.get('objectId')!=null){
+         console.log('object id não é null');
+         player.set('objectId',player.get('objectId'));
+	 }
+	 
         player.set('username',Information.UserName);
         player.set('email', Information.Email);
         player.set('password',Information.Password);
@@ -68,8 +59,8 @@ console.log("N");
             console.log('Object updated with objectId: ' + result.id);
         }catch(error){
             console.log('Failed to update object, with error code: ' + error.message);
-        }*/
-  //  } 
+	}
+    } 
 /*
 const User = Parse.Object.extend('User'); //instead of const User = new Parse.User();
 const query = new Parse.Query(User);
