@@ -1,7 +1,6 @@
-let StringListArray = "";
-export { StringListArray }
+
 export function Verify(ArrayDeSlots){
-  StringListArray = "";
+  let StringListArray = "";
   let Lista1 = ArrayDeSlots[0];
   let Lista2 = ArrayDeSlots[1];
   let Lista3 = ArrayDeSlots[2];
