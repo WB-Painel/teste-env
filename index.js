@@ -52,7 +52,7 @@ app.post('/users/register', async(req, res) => {
 
   user.set("username", "a");
   user.set("password", "aaaa");
-  user.set("email", "a@gmail.com);
+  user.set("email", "a@gmail.com");
 
   try{
     await user.signUp();
