@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "preinstall": "npm i parse",
     "start": "node index"
   },
   "keywords": [],
@@ -12,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "parse": "^4.2.0"
   }
 }
