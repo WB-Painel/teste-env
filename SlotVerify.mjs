@@ -43,7 +43,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
     result.set("email", "a@gmail.com"); //change this line to set a new email
     try {
-        result.save(null, { useMasterKey: true });
+        result.save();
         console.log( "User updated successfully!" );
     } catch (e) {
         console.log( "Erro:"+e.message );
