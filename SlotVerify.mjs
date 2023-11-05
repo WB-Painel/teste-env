@@ -109,6 +109,8 @@ export function VSOSDUEOMDS(Parse,Information){
 	}else{
 
 	console.log("A lista de slots do usuário não é igual a do servidor");
+
+	return "Sua conta foi banida por cometer uma violação";
 		
 	}
 
