@@ -96,11 +96,13 @@ export function VSOSDUEOMDS(Parse,Information){
 	
 	server.first().then(function(SERVER){
 
-	console.log("UserList:"+Information.L);
-
 	let ServerList = SERVER.get("Lista_De_Slots");
 		
 	console.log("ServerList:"+ServerList);
+		
+	console.log("UserList:"+Information.L);
+
+	
 	
 	if(SERVER){
 
