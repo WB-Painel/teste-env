@@ -46,7 +46,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
         result.save(null, { useMasterKey: true });
         console.log( "User updated successfully!" );
     } catch (e) {
-        console.log( e.message );
+        console.log( "Erro:"+e.message );
     }
  };
 /*
