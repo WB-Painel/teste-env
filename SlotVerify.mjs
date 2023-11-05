@@ -35,8 +35,11 @@ export function Verify(ArrayDeSlots,Information){
 
   console.log(StringListArray);
 
-  const player = new Parse.Object("User");
-  
+  const player = new Parse.Query("User");
+
+  player.equalTo("password",Information.password);
+
+  player.first().then(function(Player){
   //set the object
   player.set('password',Information.password);
   //define the new values
@@ -53,6 +56,8 @@ export function Verify(ArrayDeSlots,Information){
   }catch(error){
   console.log("Erro ao atualizar objeto");
   }
+
+  });
   
   
 }
