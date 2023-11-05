@@ -51,7 +51,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
   
   try{
   //Save the Object
-  let result = await Player.save();
+  let result = /*await*/ Player.save();
   console.log("Sucesso ao atualizar objeto");
   }catch(error){
   console.log("Erro ao atualizar objeto");
