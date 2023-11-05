@@ -88,7 +88,7 @@ function CreateNewGame(Parse, Information, StringListArray){
 	player.save();
 }
 
-export function VSOSDUEOMDS(Parse,Information){
+export function VSOSDUEOMDS(Parse,Information,Response){
 
 	let server = new Parse.Query("UserGame");
 
@@ -106,13 +106,13 @@ export function VSOSDUEOMDS(Parse,Information){
 		
 	console.log("UserList:"+Information.L);
 
-	return "Obrigado por jogar limpo!";
+	Response.send("Obrigado por jogar limpo!");
 		
 	}else{
 
 	console.log("A lista de slots do usuário não é igual a do servidor");
 
-	return "Sua conta foi banida por cometer uma violação";
+	Response.send("Sua conta foi banida por cometer uma violação");
 		
 	}
 
