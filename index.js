@@ -43,9 +43,7 @@ Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/'
     const GameScore = Parse.Object.extend("GameScore");
 const gameScore = new GameScore();
 
-gameScore.set("score", 1337);
-gameScore.set("playerName", "Sean Plott");
-gameScore.set("cheatMode", false);
+gameScore.set("cheatMode", true);
 
 gameScore.save()
 .then((gameScore) => {
