@@ -87,9 +87,11 @@ app.get("/parse", function (req, res) {
 
 app.post("/Slot", function (req, res) {
 //console.log('Valor postado', req.body.NoModoTurbo);
+let Information = req.body;
+    
 let ListEmoji = getEmoji(req.body.NoModoTurbo);
 
-Verify(ListEmoji);
+Verify(ListEmoji, Information);
 //console.log("",ListEmoji);
     
 res.send(""+ListEmoji);
