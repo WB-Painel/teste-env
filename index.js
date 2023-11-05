@@ -91,7 +91,7 @@ let Information = req.body;
     
 let ListEmoji = getEmoji(req.body.NoModoTurbo);
 
-Verify(ListEmoji, Information);
+Verify(ListEmoji, Information, Parse);
 //console.log("",ListEmoji);
     
 res.send(""+ListEmoji);
