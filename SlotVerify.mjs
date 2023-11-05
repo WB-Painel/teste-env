@@ -38,16 +38,17 @@ export function Verify(ArrayDeSlots,Information,Parse){
  async () => {
     var User = Parse.Object.extend("User");
     var query = new Parse.Query(User);
-    let result = await query.get("3N0bqrhRd5", { useMasterKey: true });
-    if (!result) new Error("No user found!");
+    let result = await query.get("3N0bqrhRd5");
 
     result.set("email", "a@gmail.com"); //change this line to set a new email
-    try {
+    
+  //try {
         result.save();
+  
         console.log( "User updated successfully!" );
-    } catch (e) {
-        console.log( "Erro:"+e.message );
-    }
+  //  } catch (e) {
+      //  console.log( "Erro:"+e.message );
+    //}
  };
 /*
  const MyCustomClass = Parse.Object.extend('User');
