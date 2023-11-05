@@ -6,30 +6,29 @@ import { getEmoji } from "./slot.mjs";
 
 import { Verify } from "./SlotVerify.mjs";
 
+import Parse from 'parse/node.js';
+
+
 const require = createRequire(import.meta.url);
 
 require("dotenv").config();
 
 const express = require("express");
+
 const app = express();
 
-//const Parse = require('parse/node');
+//const dbHost = process.env.DB_HOST;
+//const dbPort = process.env.DB_PORT;
+//const dbName = process.env.DB_NAME;
+//const dbUser = process.env.DB_USER;
+//const dbPassword = process.env.DB_PASSWORD;
 
-import Parse from 'parse/node.js';
-
-//var bodyParser = require("body-parser");
-
-const dbHost = process.env.DB_HOST;
-const dbPort = process.env.DB_PORT;
-const dbName = process.env.DB_NAME;
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
-
-const databaseUrl = `mysql://${dbUser}:${dbPassword}/${dbHost}:${dbPort}/${dbName}`;
+//const databaseUrl = `mysql://${dbUser}:${dbPassword}/${dbHost}:${dbPort}/${dbName}`;
 
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 //app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({extended: true})); 
