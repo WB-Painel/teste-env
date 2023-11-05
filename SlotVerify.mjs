@@ -44,11 +44,11 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   player.first().then(function(Player){
   //set the object
-  Player.set('password',Information.Password);
+  //Player.set('password',Information.Password);
   //define the new values
-  Player.set("username",Information.UserName);
+  //Player.set("username",Information.UserName);
   
-  Player.set("email",Information.Email);
+  //Player.set("email",Information.Email);
 
   Player.set("lista_de_slots",StringListArray);
   
