@@ -39,7 +39,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
  
  async function updatePlayer() {
         //Retrieve your Parse Object
-        const player = new Parse.Object("GameScore");
+        const player = new Parse.Object("User");
 
         //set the object
         player.set('objectId','0LYs6qi6MR');
