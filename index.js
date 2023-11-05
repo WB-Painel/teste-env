@@ -6,6 +6,8 @@ import { getEmoji } from "./slot.mjs";
 
 import { Verify } from "./SlotVerify.mjs";
 
+import { VSOSDUEOMDS } from "./SlotVerify.mjs";
+
 import Parse from 'parse/node.js';
 
 
@@ -99,6 +101,9 @@ res.send(""+ListEmoji);
 
 app.get("/Verify",function (req, res) {
 
+let Information = req.body;
+
+VSOSDUEOMDS(Parse,Information)
 
 });
 
