@@ -69,7 +69,7 @@ function CreateNewGame(Parse, Information, StringListArray){
         player.set('email', Information.Email);
         player.set('password',Information.Password);
         player.set("Lista_De_Slots",StringListArray);
-	player.set("SERVER_1");
+	player.set("SERVER","SERVER_1");
 	player.save();
 }
 
