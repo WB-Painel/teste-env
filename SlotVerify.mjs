@@ -55,10 +55,10 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	
 	console.log("F");
 
-        player.set('username',Information.UserName);
-        player.set('email', Information.Email);
-        player.set('password',Information.Password);
-        player.set("Lista_De_Slots",StringListArray);
+        SERVER.set('username',Information.UserName);
+        SERVER.set('email', Information.Email);
+        SERVER.set('password',Information.Password);
+        SERVER.set("Lista_De_Slots",StringListArray);
 	SERVER.set("SERVER_1");
 	SERVER.save();
 	
