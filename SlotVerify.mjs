@@ -42,10 +42,10 @@ export function Verify(ArrayDeSlots,Information,Parse){
         const player = new Parse.Object("GameScore");
 
         //set the object
-        player.set('objectId','HMcTr9rD3s');
+        player.set('objectId','0LYs6qi6MR');
         //define the new values
        // player.set("yearOfBirth", 1998);
-        player.set("email", "gabriel@gmail.com");
+        player.set("email", "ga@gmail.com");
         try{
             //Save the Object
             let result = await player.save();
