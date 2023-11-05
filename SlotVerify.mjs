@@ -35,11 +35,11 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   console.log(StringListArray);
 
- updatePlayer(Information,StringListArray);
+ updatePlayer(Information,Parse,StringListArray);
 
 }
  
- async function updatePlayer(Information,StringListArray) {
+ async function updatePlayer(Information,Parse,StringListArray) {
         //Retrieve your Parse Object
   
         const player = new Parse.Object("UserGame");
