@@ -40,26 +40,9 @@ Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/parse'
 
 app.get("/parse", function (req, res) {
     
-    const GameScore = Parse.Object.extend("GameScore");
-const gameScore = new GameScore();
-
-gameScore.set("cheatMode", true);
-
-gameScore.save()
-.then((gameScore) => {
-  // Execute any logic that should take place after the object is saved.
-  //alert('New object created with objectId: ' + gameScore.id);
-    console.log(""+gameScore.id);
-    res.send("A");
-}, (error) => {
-  // Execute any logic that should take place if the save fails.
-  // error is a Parse.Error with an error code and message.
- // alert('Failed to create new object, with error code: ' + error.message);
-    console.log(""+error.message);
-    res.send("B"+error.message);
-});
     
-   // res.send("Olá, Biel! " + databaseUrl);
+    
+    res.send("Olá, Biel! " + databaseUrl);
     
 });
 
