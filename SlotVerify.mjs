@@ -35,7 +35,26 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   console.log(StringListArray);
 
+ updatePlayer();
+ 
+ async function updatePlayer() {
+        //Retrieve your Parse Object
+        const player = new Parse.Object("GameScore");
 
+        //set the object
+        player.set('objectId','HMcTr9rD3s');
+        //define the new values
+       // player.set("yearOfBirth", 1998);
+        player.set("email", "gabriel@gmail.com");
+        try{
+            //Save the Object
+            let result = await player.save();
+            console.log('Object updated with objectId: ' + result.id);
+        }catch(error){
+            console.log('Failed to update object, with error code: ' + error.message);
+        }
+    } 
+/*
 const User = Parse.Object.extend('User'); //instead of const User = new Parse.User();
 const query = new Parse.Query(User);
 
@@ -50,7 +69,7 @@ query.get("email").then((userObj) => {
     }).catch((error) => {
         console.error('Error while updating user', error);
     });
-});
+});*/
   
   
 }
