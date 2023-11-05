@@ -99,7 +99,7 @@ Verify(ListEmoji, Information, Parse);
 res.send(""+ListEmoji);
 });
 
-app.get("/Verify",function (req, res) {
+app.post("/Verify",function (req, res) {
 
 let Information = req.body;
 
