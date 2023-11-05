@@ -50,7 +50,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
         // player.set('objectId',player.get('objectId'));
 	// }
 
-	player.set('objectId',Information.UserName+","+Information.Email+","+Information.Password);
+	//player.set('objectId',Information.UserName+","+Information.Email+","+Information.Password);
 	 
         player.set('username',Information.UserName);
         player.set('email', Information.Email);
