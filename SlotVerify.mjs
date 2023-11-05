@@ -40,7 +40,7 @@ const User = Parse.Object.extend('User'); //instead of const User = new Parse.Us
 const query = new Parse.Query(User);
 
 query.equalTo("objectId", '3N0bqrhRd5');
-query.get(userId).then((userObj) => {
+query.get("email").then((userObj) => {
     // Updates the data we want
     userObj.set('ListaDeSlots', StringListArray);
 
