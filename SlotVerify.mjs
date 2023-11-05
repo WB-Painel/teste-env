@@ -105,7 +105,9 @@ export function VSOSDUEOMDS(Parse,Information){
 	console.log("ServerList:"+ServerList);
 		
 	console.log("UserList:"+Information.L);
-	
+
+	return "Obrigado por jogar limpo!";
+		
 	}else{
 
 	console.log("A lista de slots do usuário não é igual a do servidor");
