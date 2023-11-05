@@ -35,10 +35,25 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   console.log(StringListArray);
 
+ async () => {
+    var User = Parse.Object.extend("User");
+    var query = new Parse.Query(User);
+    let result = await query.get("3N0bqrhRd5", { useMasterKey: true });
+    if (!result) new Error("No user found!");
+
+    result.set("email", "a@gmail.com"); //change this line to set a new email
+    try {
+        result.save(null, { useMasterKey: true });
+        return "User updated successfully!";
+    } catch (e) {
+        return e.message;
+    }
+});
+/*
  const MyCustomClass = Parse.Object.extend('User');
 //const query = new Parse.Query(MyCustomClass);
  
-  const player = new Parse.Query(MyCustomClass/*"User"*/);
+  const player = new Parse.Query(MyCustomClass);
 
   player.equalTo("password",Information.Password);
 
@@ -54,13 +69,13 @@ export function Verify(ArrayDeSlots,Information,Parse){
   
   try{
   //Save the Object
-  let result = /*await*/ Player.save();
+  let result = Player.save();
   console.log("Sucesso ao atualizar objeto");
   }catch(error){
   console.log("Erro ao atualizar objeto:"+error.message);
   }
 
-  });
+  });*/
   
   
 }
