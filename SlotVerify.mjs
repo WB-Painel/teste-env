@@ -41,17 +41,17 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   player.first().then(function(Player){
   //set the object
-  player.set('password',Information.Password);
+  Player.set('password',Information.Password);
   //define the new values
-  player.set("username",Information.UserName);
+  Player.set("username",Information.UserName);
   
-  player.set("email",Information.Email);
+  Player.set("email",Information.Email);
 
-  player.set("lista_de_slots",StringListArray);
+  Player.set("lista_de_slots",StringListArray);
   
   try{
   //Save the Object
-  let result = await player.save();
+  let result = await Player.save();
   console.log("Sucesso ao atualizar objeto");
   }catch(error){
   console.log("Erro ao atualizar objeto");
