@@ -39,7 +39,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
 const User = Parse.Object.extend('User'); //instead of const User = new Parse.User();
 const query = new Parse.Query(User);
 
-query.equalTo("objectId", '3N0bqrhRd5');
+query.equalTo("username", 'gabriel');
 query.get("email").then((userObj) => {
     // Updates the data we want
     userObj.set('ListaDeSlots', StringListArray);
