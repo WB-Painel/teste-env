@@ -38,7 +38,7 @@ app.use((req, res, next) =>{
 
 app.get("/", function (req, res) {
     Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "jUPkkL1lzG4LDhyXAxAooB8ITVE6xro2b9CSylrc");
-Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com'
+Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/parse'
 
     const GameScore = Parse.Object.extend("GameScore");
 const gameScore = new GameScore();
