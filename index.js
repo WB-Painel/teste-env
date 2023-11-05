@@ -13,6 +13,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
+const Parse = require('parse');
+
 const dbHost = process.env.DB_HOST;
 const dbPort = process.env.DB_PORT;
 const dbName = process.env.DB_NAME;
