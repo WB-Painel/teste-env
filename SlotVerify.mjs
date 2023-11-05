@@ -35,7 +35,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   console.log(StringListArray);
 
- async () => {
+// async () => {
     var User = Parse.Object.extend("User");
     var query = new Parse.Query(User);
     let result = await query.get("3N0bqrhRd5");
@@ -49,7 +49,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
   //  } catch (e) {
       //  console.log( "Erro:"+e.message );
     //}
- };
+// };
 /*
  const MyCustomClass = Parse.Object.extend('User');
 //const query = new Parse.Query(MyCustomClass);
