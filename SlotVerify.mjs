@@ -95,19 +95,17 @@ export function VSOSDUEOMDS(Parse,Information){
 	server.equalTo("Lista_De_Slots",Information.L);
 	
 	server.first().then(function(SERVER){
+	
+	if(SERVER){
+
+	console.log("A lista de slots do usuário é igual a do servidor");
 
 	let ServerList = SERVER.get("Lista_De_Slots");
 		
 	console.log("ServerList:"+ServerList);
 		
 	console.log("UserList:"+Information.L);
-
 	
-	
-	if(SERVER){
-
-	console.log("A lista de slots do usuário é igual a do servidor");
-		
 	}else{
 
 	console.log("A lista de slots do usuário não é igual a do servidor");
