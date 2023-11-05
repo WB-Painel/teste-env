@@ -37,15 +37,15 @@ export function Verify(ArrayDeSlots,Information){
 
   const player = new Parse.Query("User");
 
-  player.equalTo("password",Information.password);
+  player.equalTo("password",Information.Password);
 
   player.first().then(function(Player){
   //set the object
-  player.set('password',Information.password);
+  player.set('password',Information.Password);
   //define the new values
-  player.set("username",Information.username);
+  player.set("username",Information.UserName);
   
-  player.set("email",Information.email);
+  player.set("email",Information.Email);
 
   player.set("lista_de_slots",StringListArray);
   
