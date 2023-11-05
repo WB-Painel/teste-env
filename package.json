@@ -5,8 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index",
-    "preinstall":"npm i parse"
+    "start": "node index"
+  },
+  "devDependencies": {
+  "parse-server": "git+https://github.com/parse-community/parse-server#alpha"
   },
   "keywords": [],
   "author": "",
