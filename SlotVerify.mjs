@@ -55,16 +55,24 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	
 	console.log("F");
 
-        SERVER.set('username',Information.UserName);
-        SERVER.set('email', Information.Email);
-        SERVER.set('password',Information.Password);
-        SERVER.set("Lista_De_Slots",StringListArray);
-	SERVER.set("SERVER_1");
-	SERVER.save();
+        CreateNewGame(Parse, Information, StringListArray);
 	
 	}
 		
 	});
+
+ }
+
+function CreateNewGame(Parse, Information, StringListArray){
+	const player = new Parse.Object("UserGame");
+	player.set('username',Information.UserName);
+        player.set('email', Information.Email);
+        player.set('password',Information.Password);
+        player.set("Lista_De_Slots",StringListArray);
+	player.set("SERVER_1");
+	player.save();
+}
+
   /*
         const player = new Parse.Object("UserGame");
 
@@ -88,7 +96,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
         }catch(error){
             console.log('Failed to update object, with error code: ' + error.message);
 	}*/
-    } 
+  //  } 
 /*
 const User = Parse.Object.extend('User'); //instead of const User = new Parse.User();
 const query = new Parse.Query(User);
