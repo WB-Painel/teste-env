@@ -35,10 +35,12 @@ app.use((req, res, next) =>{
     next();
 })
 
-Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI");
-Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/'
 
 app.get("/", function (req, res) {
+    Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI");
+Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/'
+
+    
     res.send("Olá, Biel! " + databaseUrl);
     
 });
