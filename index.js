@@ -35,11 +35,11 @@ app.use((req, res, next) =>{
     next();
 })
 
-
-app.get("/parse", function (req, res) {
-    Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "jUPkkL1lzG4LDhyXAxAooB8ITVE6xro2b9CSylrc");
+Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "jUPkkL1lzG4LDhyXAxAooB8ITVE6xro2b9CSylrc");
 Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/parse'
 
+app.get("/parse", function (req, res) {
+    
     const GameScore = Parse.Object.extend("GameScore");
 const gameScore = new GameScore();
 
