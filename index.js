@@ -17,6 +17,8 @@ const app = express();
 
 import Parse from 'parse/node.js';
 
+var bodyParser = require("body-parser");
+
 const dbHost = process.env.DB_HOST;
 const dbPort = process.env.DB_PORT;
 const dbName = process.env.DB_NAME;
@@ -27,8 +29,12 @@ const databaseUrl = `mysql://${dbUser}:${dbPassword}/${dbHost}:${dbPort}/${dbNam
 
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+//app.use(express.json());
+//app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true})); 
+
+require('./routes');
 
 app.use((req, res, next) =>{
     res.header("Access-Control-Allow-Origin","*");
@@ -41,6 +47,21 @@ Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr","1SIpvCODXvK6MrKkJFR
 //Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/parse'
 Parse.serverURL = 'https://parseapi.back4app.com/';
 
+app.post('/users/register', async(req, res) => {
+  let infoUser = req.body;    
+  let user = new Parse.User();
+
+  user.set("username", infoUser.usernameRegister);
+  user.set("password", infoUser.passwordRegister);
+  user.set("email", infoUser.emailRegister);
+
+  try{
+    await user.signUp();
+    res.render('index', { loginMessage : '', RegisterMessage: "User created!", typeStatus: "success",  infoUser: infoUser});
+  } catch (error) {
+    res.render('index', { loginMessage : '', RegisterMessage: error.message, typeStatus: "danger",  infoUser: infoUser});
+  }
+});
 
 app.get("/parse", function (req, res) {
     
