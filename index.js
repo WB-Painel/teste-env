@@ -49,7 +49,7 @@ Parse.serverURL = 'https://parseapi.back4app.com/';
 app.post('/users/register', async(req, res) => {
   let user = new Parse.User();
 
-  user.set("username", "a");
+  user.set("username", "b");
   user.set("password", "aaaa");
   user.set("email", "a@gmail.com");
 
