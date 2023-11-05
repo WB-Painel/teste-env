@@ -42,7 +42,7 @@ app.use((req, res, next) =>{
     next();
 })
 
-Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr","jUPkkL1lzG4LDhyXAxAooB8ITVE6xro2b9CSylrc"/*"1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI"*/);
+Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr","1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI"/*"1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI"*/);
 //Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/parse'
 Parse.serverURL = 'https://parseapi.back4app.com/';
 
