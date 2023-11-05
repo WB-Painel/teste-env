@@ -46,9 +46,9 @@ app.get("/parse", function (req, res) {
     
     //const GameScore = Parse.Object.extend("GameScore");
 
-    let install = new Parse.Installation();
+    new Parse.Installation();
     
-    res.send("Olá, Biel! " + install);
+    res.send("Olá, Biel! ");
     
 });
 
