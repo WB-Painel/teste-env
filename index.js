@@ -40,6 +40,24 @@ app.get("/", function (req, res) {
     Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI");
 Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/'
 
+    const GameScore = Parse.Object.extend("GameScore");
+const gameScore = new GameScore();
+
+gameScore.set("score", 1337);
+gameScore.set("playerName", "Sean Plott");
+gameScore.set("cheatMode", false);
+
+gameScore.save()
+.then((gameScore) => {
+  // Execute any logic that should take place after the object is saved.
+  //alert('New object created with objectId: ' + gameScore.id);
+    console.log(""+gameScore.id);
+}, (error) => {
+  // Execute any logic that should take place if the save fails.
+  // error is a Parse.Error with an error code and message.
+ // alert('Failed to create new object, with error code: ' + error.message);
+    console.log(""+error.message);
+});
     
     res.send("Olá, Biel! " + databaseUrl);
     
