@@ -91,6 +91,10 @@ function CreateNewGame(Parse, Information, StringListArray){
 export function VSOSDUEOMDS(Parse,Information){
 
 	let server = new Parse.Query("UserGame");
+
+	console.log("UserList:"+Information.L);
+
+	console.log("ServerList:"+server.get("Lista_De_Slots"));
 	
 	server.equalTo("Lista_De_Slots",Information.L);
 	
