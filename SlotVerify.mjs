@@ -45,10 +45,12 @@ export function Verify(ArrayDeSlots,Information,Parse){
         const player = new Parse.Object("UserGame");
 
         //set the object
-	 if(player.get('objectId')!=null){
-         console.log('object id não é null');
-         player.set('objectId',player.get('objectId'));
-	 }
+	// if(player.get('objectId')!=null){
+        // console.log('object id não é null');
+        // player.set('objectId',player.get('objectId'));
+	// }
+
+	player.set('objectId',Information.UserName+","+Information.Email+","+Information.Password);
 	 
         player.set('username',Information.UserName);
         player.set('email', Information.Email);
