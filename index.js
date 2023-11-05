@@ -103,7 +103,9 @@ app.post("/Verify",function (req, res) {
 
 let Information = req.body;
 
-VSOSDUEOMDS(Parse,Information)
+VSOSDUEOMDS(Parse,Information);
+
+res.send("Y");
 
 });
 
