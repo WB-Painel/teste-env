@@ -1,7 +1,7 @@
 
-export function Verify(ArrayDeSlots,Information){
+export function Verify(ArrayDeSlots,Information,Parse){
  
-  import Parse from "parse/node.js";
+  //import Parse from "parse/node.js";
   
   let StringListArray = "";
   let Lista1 = ArrayDeSlots[0];
