@@ -48,9 +48,20 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	server.first().then(function(SERVER){
 
 	if(SERVER){
-		console.log("S");
+	
+	console.log("S");
+	
 	}else{
-		console.log("F");
+	
+	console.log("F");
+
+        player.set('username',Information.UserName);
+        player.set('email', Information.Email);
+        player.set('password',Information.Password);
+        player.set("Lista_De_Slots",StringListArray);
+	SERVER.set("SERVER_1");
+	SERVER.save();
+	
 	}
 		
 	});
