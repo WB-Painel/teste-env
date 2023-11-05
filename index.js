@@ -13,7 +13,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-const Parse = require('parse');
+const Parse = require('parse/node');
 
 const dbHost = process.env.DB_HOST;
 const dbPort = process.env.DB_PORT;
@@ -45,20 +45,8 @@ app.get("/parse", function (req, res) {
     //const GameScore = Parse.Object.extend("GameScore");
 
     let install = new Parse.Installation();
-
-  install.save(null, {
-    success: (install) => {
-      // Execute any logic that should take place after the object is saved.
-      this.result = 'New object created with objectId: ' + install.id;
-    },
-    error: (install, error) => {
-      // Execute any logic that should take place if the save fails.
-      // error is a Parse.Error with an error code and message.
-      this.result = ('Failed to create new object, with error code:' + error.message.toString());
-    }
-  });
     
-    res.send("Olá, Biel! " + databaseUrl);
+    res.send("Olá, Biel! " + install);
     
 });
 
