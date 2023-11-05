@@ -64,7 +64,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	SERVER.save();
 	
 
-	console.log(ObjectId+Username);
+	//console.log(ObjectId+Username);
 	
 	}else{
 	
