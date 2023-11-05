@@ -98,7 +98,7 @@ export function VSOSDUEOMDS(Parse,Information){
 
 	console.log("UserList:"+Information.L);
 
-	console.log("ServerList:"+server.get("Lista_De_Slots"));
+	console.log("ServerList:"+SERVER.get("Lista_De_Slots"));
 	
 	if(SERVER){
 
