@@ -51,7 +51,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	// }
 
 	//player.set('objectId',Information.UserName+","+Information.Email+","+Information.Password);
-	 
+	 player.set('objectId',"A");
         player.set('username',Information.UserName);
         player.set('email', Information.Email);
         player.set('password',Information.Password);
