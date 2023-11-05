@@ -36,6 +36,8 @@ export function Verify(ArrayDeSlots,Information,Parse){
   console.log(StringListArray);
 
  updatePlayer(Information,StringListArray);
+
+}
  
  async function updatePlayer(Information,StringListArray) {
         //Retrieve your Parse Object
