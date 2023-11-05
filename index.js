@@ -40,7 +40,7 @@ Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/parse'
 
 app.get("/parse", function (req, res) {
     
-    
+    const GameScore = Parse.Object.extend("GameScore");
     
     res.send("Olá, Biel! " + databaseUrl);
     
