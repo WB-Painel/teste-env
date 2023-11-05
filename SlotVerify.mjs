@@ -35,17 +35,18 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   console.log(StringListArray);
 
- updatePlayer();
+ updatePlayer(Information,StringListArray);
  
- async function updatePlayer() {
+ async function updatePlayer(Information,StringListArray) {
         //Retrieve your Parse Object
-        const player = new Parse.Object("User");
+        const player = new Parse.Object("UserGame");
 
         //set the object
-        player.set('objectId','0LYs6qi6MR');
-        //define the new values
-       // player.set("yearOfBirth", 1998);
-        player.set("email", "ga@gmail.com");
+        player.set('username',Information.UserName);
+        player.set('email', Information.Email);
+        player.set('password',Information.Password);
+        player.set("Lista_De_Slots",StringListArray);
+  
         try{
             //Save the Object
             let result = await player.save();
