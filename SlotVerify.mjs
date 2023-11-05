@@ -88,6 +88,28 @@ function CreateNewGame(Parse, Information, StringListArray){
 	player.save();
 }
 
+export function VSOSDUEOMDS(Parse,Information){
+
+	let server = new Parse.Query("UserGame");
+	
+	server.equalTo("Lista_De_Slots",Information.L);
+	
+	server.first().then(function(SERVER){
+
+	if(SERVER){
+
+	console.log("A lista de slots do usuário é igual a do servidor");
+		
+	}else{
+
+	console.log("A lista de slots do usuário não é igual a do servidor");
+		
+	}
+
+	});
+	
+}
+
   /*
         const player = new Parse.Object("UserGame");
 
