@@ -53,7 +53,9 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
 	let ObjectId = SERVER.get("objectId");
 
-	console.log(ObjectId);
+	let Username = SERVER.get("username");
+
+	console.log(ObjectId+Username);
 	
 	}else{
 	
