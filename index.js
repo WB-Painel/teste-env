@@ -47,7 +47,8 @@ Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr","1SIpvCODXvK6MrKkJFR
 Parse.serverURL = 'https://parseapi.back4app.com/';
 
 app.post('/users/register', async(req, res) => {
-  let user = new Parse.User();
+    console.log(req.body);
+  /*let user = new Parse.User();
 
   user.set("username", "b");
   user.set("password", "aaaa");
@@ -60,7 +61,7 @@ app.post('/users/register', async(req, res) => {
   } catch (error) {
       console.log("Não");
     //res.render('index', { loginMessage : '', RegisterMessage: error.message, typeStatus: "danger",  infoUser: "a");
-  }
+  }*/
 });
 
 app.get("/parse", function (req, res) {
