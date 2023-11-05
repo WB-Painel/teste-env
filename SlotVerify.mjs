@@ -69,7 +69,7 @@ console.log("N");
         }catch(error){
             console.log('Failed to update object, with error code: ' + error.message);
         }*/
-    } 
+  //  } 
 /*
 const User = Parse.Object.extend('User'); //instead of const User = new Parse.User();
 const query = new Parse.Query(User);
