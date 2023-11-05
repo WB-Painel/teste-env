@@ -55,9 +55,11 @@ app.post('/users/register', async(req, res) => {
 
   try{
     await user.signUp();
-    res.render('index', { loginMessage : '', RegisterMessage: "User created!", typeStatus: "success",  infoUser: "a");
+      console.log("Sim");
+    //res.render('index', { loginMessage : '', RegisterMessage: "User created!", typeStatus: "success",  infoUser: "a");
   } catch (error) {
-    res.render('index', { loginMessage : '', RegisterMessage: error.message, typeStatus: "danger",  infoUser: "a");
+      console.log("Não");
+    //res.render('index', { loginMessage : '', RegisterMessage: error.message, typeStatus: "danger",  infoUser: "a");
   }
 });
 
