@@ -35,48 +35,22 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   console.log(StringListArray);
 
-// async () => {
-    var User = Parse.Object.extend("User");
-    var query = new Parse.Query(User);
-    let result = query.get("3N0bqrhRd5");
 
-    result.set("email", "a@gmail.com"); //change this line to set a new email
-    
-  //try {
-        result.save();
-  
-        console.log( "User updated successfully!" );
-  //  } catch (e) {
-      //  console.log( "Erro:"+e.message );
-    //}
-// };
-/*
- const MyCustomClass = Parse.Object.extend('User');
-//const query = new Parse.Query(MyCustomClass);
- 
-  const player = new Parse.Query(MyCustomClass);
+const User = Parse.Object.extend('User'); //instead of const User = new Parse.User();
+const query = new Parse.Query(User);
 
-  player.equalTo("password",Information.Password);
+query.equalTo("objectId", '3N0bqrhRd5');
+query.get(userId).then((userObj) => {
+    // Updates the data we want
+    userObj.set('ListaDeSlots', StringListArray);
 
-  player.first().then(function(Player){
-  //set the object
-  //Player.set('password',Information.Password);
-  //define the new values
-  //Player.set("username",Information.UserName);
-  
-  //Player.set("email",Information.Email);
-
-  Player.set("lista_de_slots",StringListArray);
-  
-  try{
-  //Save the Object
-  let result = Player.save();
-  console.log("Sucesso ao atualizar objeto");
-  }catch(error){
-  console.log("Erro ao atualizar objeto:"+error.message);
-  }
-
-  });*/
+    // Saves the user with the updated data
+    userObj.save(null, {useMasterKey: true}).then((response) => {
+        console.log('Updated user', response);
+    }).catch((error) => {
+        console.error('Error while updating user', error);
+    });
+});
   
   
 }
