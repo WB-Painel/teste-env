@@ -50,6 +50,8 @@ console.log("S");
   }else{
 console.log("N");
   }
+
+	});
   
  }
         /*const player = new Parse.Object("UserGame");
