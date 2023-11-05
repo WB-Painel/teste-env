@@ -38,7 +38,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
 // async () => {
     var User = Parse.Object.extend("User");
     var query = new Parse.Query(User);
-    let result = await query.get("3N0bqrhRd5");
+    let result = query.get("3N0bqrhRd5");
 
     result.set("email", "a@gmail.com"); //change this line to set a new email
     
