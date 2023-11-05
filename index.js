@@ -35,12 +35,28 @@ app.use((req, res, next) =>{
     next();
 })
 
-Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "jUPkkL1lzG4LDhyXAxAooB8ITVE6xro2b9CSylrc");
-Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/parse'
+Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr","1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI" /*"jUPkkL1lzG4LDhyXAxAooB8ITVE6xro2b9CSylrc"*/);
+//Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com/parse'
+Parse.serverURL = 'https://parseapi.back4app.com/';
+
 
 app.get("/parse", function (req, res) {
     
-    const GameScore = Parse.Object.extend("GameScore");
+    //const GameScore = Parse.Object.extend("GameScore");
+
+    let install = new Parse.Installation();
+
+  install.save(null, {
+    success: (install) => {
+      // Execute any logic that should take place after the object is saved.
+      this.result = 'New object created with objectId: ' + install.id;
+    },
+    error: (install, error) => {
+      // Execute any logic that should take place if the save fails.
+      // error is a Parse.Error with an error code and message.
+      this.result = ('Failed to create new object, with error code:' + error.message.toString());
+    }
+  });
     
     res.send("Olá, Biel! " + databaseUrl);
     
