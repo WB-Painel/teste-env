@@ -37,7 +37,7 @@ app.use((req, res, next) =>{
 
 
 app.get("/", function (req, res) {
-    Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "1SIpvCODXvK6MrKkJFR5F0WedOly3gG5hfLxXosI");
+    Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr", "jUPkkL1lzG4LDhyXAxAooB8ITVE6xro2b9CSylrc);
 Parse.serverURL = 'https://teste-env-369aa8701d2e.herokuapp.com'
 
     const GameScore = Parse.Object.extend("GameScore");
@@ -56,7 +56,7 @@ gameScore.save()
   // error is a Parse.Error with an error code and message.
  // alert('Failed to create new object, with error code: ' + error.message);
     console.log(""+error.message);
-    res.send("B");
+    res.send("B"+error.message);
 });
     
    // res.send("Olá, Biel! " + databaseUrl);
