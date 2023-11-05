@@ -1,5 +1,8 @@
 
-export function Verify(ArrayDeSlots){
+export function Verify(ArrayDeSlots,Information){
+ 
+  import Parse from "parse/node.js";
+  
   let StringListArray = "";
   let Lista1 = ArrayDeSlots[0];
   let Lista2 = ArrayDeSlots[1];
@@ -31,6 +34,25 @@ export function Verify(ArrayDeSlots){
   }
 
   console.log(StringListArray);
+
+  const player = new Parse.Object("User");
+  
+  //set the object
+  player.set('password',Information.password);
+  //define the new values
+  player.set("username",Information.username);
+  
+  player.set("email",Information.email);
+
+  player.set("lista_de_slots",StringListArray);
+  
+  try{
+  //Save the Object
+  let result = await player.save();
+  console.log("Sucesso ao atualizar objeto");
+  }catch(error){
+  console.log("Erro ao atualizar objeto");
+  }
   
   
 }
