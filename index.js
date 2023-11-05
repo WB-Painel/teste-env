@@ -17,7 +17,7 @@ const app = express();
 
 import Parse from 'parse/node.js';
 
-var bodyParser = require("body-parser");
+//var bodyParser = require("body-parser");
 
 const dbHost = process.env.DB_HOST;
 const dbPort = process.env.DB_PORT;
@@ -29,10 +29,10 @@ const databaseUrl = `mysql://${dbUser}:${dbPassword}/${dbHost}:${dbPort}/${dbNam
 
 const port = process.env.PORT || 3000;
 
-//app.use(express.json());
-//app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true})); 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({extended: true})); 
 
 
 
@@ -48,12 +48,11 @@ Parse.initialize("jBtz9Iq2d3y5VVnqEFwtgVjVURilGwXpRojcK0Kr","1SIpvCODXvK6MrKkJFR
 Parse.serverURL = 'https://parseapi.back4app.com/';
 
 app.post('/users/register', async(req, res) => {
-  let infoUser = req.body;    
   let user = new Parse.User();
 
-  user.set("username", infoUser.usernameRegister);
-  user.set("password", infoUser.passwordRegister);
-  user.set("email", infoUser.emailRegister);
+  user.set("username", "a");
+  user.set("password", "aaaa");
+  user.set("email", "a@gmail.com);
 
   try{
     await user.signUp();
