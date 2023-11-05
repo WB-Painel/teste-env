@@ -50,6 +50,10 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	if(SERVER){
 	
 	console.log("S");
+
+	let ObjectId = SERVER.get("objectId");
+
+	console.log(ObjectId);
 	
 	}else{
 	
