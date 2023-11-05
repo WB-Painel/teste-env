@@ -35,7 +35,10 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   console.log(StringListArray);
 
-  const player = new Parse.Query("User");
+ const MyCustomClass = Parse.Object.extend('User');
+//const query = new Parse.Query(MyCustomClass);
+ 
+  const player = new Parse.Query(MyCustomClass/*"User"*/);
 
   player.equalTo("password",Information.Password);
 
