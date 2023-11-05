@@ -48,7 +48,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
     } catch (e) {
         return e.message;
     }
-});
+ };
 /*
  const MyCustomClass = Parse.Object.extend('User');
 //const query = new Parse.Query(MyCustomClass);
