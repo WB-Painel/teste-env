@@ -7,9 +7,10 @@
   "scripts": {
     "start": "node index"
   },
-  "devDependencies": {
-  "parse-server": "git+https://github.com/parse-community/parse-server#alpha"
-  },
+  "dependencies": {
+    "parse": "https://npmcdn.com/parse/dist/parse.js"
+  }
+  ,
   "keywords": [],
   "author": "",
   "license": "ISC",
