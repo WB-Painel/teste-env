@@ -172,6 +172,7 @@ if(NoModoTurbo){
 }else{
 	MaxCount=30;
 }
+	console.log("No Modo Turbo:"+NoModoTurbo);
   
   if(array_1.length!==MaxCount){
   
@@ -226,6 +227,8 @@ function VerificarListaDeSlotsIguais(ValorDaAposta,array_1,array_2,array_3){
   
   //let AlinhamentoDeSlotsCount = 0;
   let ValorApostado = ValorDaAposta;
+
+	console.log(""+ValorApostado);
   
   let Valor1 = 0;
   
