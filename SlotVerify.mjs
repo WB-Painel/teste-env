@@ -106,9 +106,9 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 
 	console.log("A lista de slots do usuário é igual a do servidor");
 
-	let ValorDaAposta = SERVER.get("ValorDaAposta");
+	let ValorDaAposta = SERVER.get("valor_da_aposta");
 
-	let NoModoTurbo = SERVER.get("NoModoTurbo");
+	let NoModoTurbo = SERVER.get("modo_turbo");
 		
 	let ServerList = SERVER.get("Lista_De_Slots");
 		
