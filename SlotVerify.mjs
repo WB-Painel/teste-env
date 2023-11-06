@@ -106,6 +106,8 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 		
 	console.log("UserList:"+Information.L);
 
+	Separate(ServerList);
+		
 	Response.send("Obrigado por jogar limpo!");
 		
 	}else{
@@ -120,6 +122,251 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 	
 }
 
+function Separate(v){
+var array_1 = [];
+  var array_2 = [];
+  var array_3 = [];
+  
+  var a = 0;
+  var b = 0;
+  
+  while(b<=v.length){
+  
+  if(v.substring(b-1,b)==","){
+
+  ParseV(array_1,array_2,array_3,a,b,v);
+  
+  a=b;
+  
+  }else{
+  
+  if(b==v.length){
+  
+  ParseV(array_1,array_2,array_3,a,b,v);
+  
+  }
+  
+  }
+  
+  b++;
+  
+  }
+}
+
+function ParseV(array_1,array_2,array_3,A,B,C){
+
+ // C=C.replace(",","");
+  
+  if(array_1.length!==3){
+  
+  AA(array_1,A,B,C);
+  
+  return;
+  }
+  
+  if(array_2.length!==3){
+  
+  BB(array_2,A,B,C);
+  
+  return;
+  }
+  
+  if(array_3.length!==3){
+  
+  CC(array_3,A,B,C);
+  
+  }
+  
+  if(array_3.length==3){
+  
+  VerificarListaDeSlotsIguais(array_1,array_2,array_3);
+  
+  }
+  
+  
+}
+
+
+function AA(array_1,A,B,C){
+
+  array_1.push(C.substring(A,B));
+
+  }
+  
+  function BB(array_2,A,B,C){
+
+  array_2.push(C.substring(A,B));
+
+  }
+  
+  function CC(array_3,A,B,C){
+
+  array_3.push(C.substring(A,B));
+
+  }
+
+
+function VerificarListaDeSlotsIguais(array_1,array_2,array_3){
+  
+  //let AlinhamentoDeSlotsCount = 0;
+  let ValorApostado = 100.40;
+  
+  let Valor1 = 0;
+  
+  let Valor2 = 0;
+  
+  let Valor3 = 0;
+  
+  let Valor4 = 0;
+  
+  let Valor5 = 0;
+  
+  
+  let array_1_length = array_1.length;
+  
+  let array_2_length = array_2.length;
+  
+  let array_3_length = array_3.length;
+  
+  
+  let LISTA_1_POS_3 = array_1[array_1_length-1];
+  
+  let LISTA_1_POS_2 = array_1[array_1_length-2];
+  
+  let LISTA_1_POS_1 = array_1[array_1_length-3];
+  
+  
+  let LISTA_2_POS_3 = array_2[array_2_length-1];
+  
+  let LISTA_2_POS_2 = array_2[array_2_length-2];
+  
+  let LISTA_2_POS_1 = array_2[array_2_length-3];
+  
+  
+  let LISTA_3_POS_3 = array_3[array_3_length-1];
+  
+  let LISTA_3_POS_2 = array_3[array_3_length-2];
+  
+  let LISTA_3_POS_1 = array_3[array_3_length-3];
+  
+  
+  
+  LISTA_1_POS_1=LISTA_1_POS_1.replace(",","");
+  LISTA_2_POS_1=LISTA_2_POS_1.replace(",","");
+  LISTA_3_POS_1=LISTA_3_POS_1.replace(",","");
+  
+//  alert(LISTA_1_POS_1+LISTA_2_POS_1+LISTA_3_POS_1);
+  
+  LISTA_1_POS_2=LISTA_1_POS_2.replace(",","");
+  LISTA_2_POS_2=LISTA_2_POS_2.replace(",","");
+  LISTA_3_POS_2=LISTA_3_POS_2.replace(",","");
+  
+//  alert(LISTA_1_POS_2+LISTA_2_POS_2+LISTA_3_POS_2);
+  
+  LISTA_1_POS_3=LISTA_1_POS_3.replace(",","");
+  LISTA_2_POS_3=LISTA_2_POS_3.replace(",","");
+  LISTA_3_POS_3=LISTA_3_POS_3.replace(",","");
+  
+ // alert(LISTA_1_POS_3+LISTA_2_POS_3+LISTA_3_POS_3);
+  
+  
+  if(LISTA_1_POS_1==LISTA_2_POS_1&&LISTA_2_POS_1==LISTA_3_POS_1){
+  console.log("Completou a primeira lista na horrizontal");
+  Valor1 = VerificarPersonagemDoSlotAlinhado(LISTA_1_POS_1,ValorApostado);
+  }
+  
+  if(LISTA_1_POS_2==LISTA_2_POS_2&&LISTA_2_POS_2==LISTA_3_POS_2){
+  console.log("Completou a segunda lista na horrizontal");
+  Valor2 = VerificarPersonagemDoSlotAlinhado(LISTA_1_POS_2,ValorApostado);
+  }
+  
+  if(LISTA_1_POS_3==LISTA_2_POS_3&&LISTA_2_POS_3==LISTA_3_POS_3){
+  console.log("Completou a terceira lista na horrizontal");
+  Valor3 = VerificarPersonagemDoSlotAlinhado(LISTA_1_POS_3,ValorApostado);
+  }
+  
+  
+  
+  if(LISTA_1_POS_1==LISTA_2_POS_2&&LISTA_2_POS_2==LISTA_3_POS_3){
+  //AlinhamentoDeSlotsCount=AlinhamentoDeSlotsCount+1;
+  Valor4 = VerificarPersonagemDoSlotAlinhado(LISTA_1_POS_1,ValorApostado);
+  }
+  
+  if(LISTA_3_POS_1==LISTA_2_POS_2&&LISTA_2_POS_2==LISTA_1_POS_3){
+  //AlinhamentoDeSlotsCount=AlinhamentoDeSlotsCount+1;
+  Valor5 = VerificarPersonagemDoSlotAlinhado(LISTA_3_POS_1,ValorApostado);
+  }
+  
+  let ValorTotal = ValorApostado+Valor1+Valor2+Valor3;
+  
+  let formated = GetNumberFormat().format(""+ValorTotal);
+  
+  //alert(formated);
+  console.log(formated);
+  
+  }
+  
+  function VerificarPersonagemDoSlotAlinhado(Personagem,ValorApostado){
+  
+  //let duplication = 0;
+  if(Personagem.includes("manopla.png")){
+  
+  return 9*ValorApostado;
+  }
+	  
+  if(Personagem.includes("po.png")){
+  
+  return 8*ValorApostado;
+  }
+  
+  if(Personagem.includes("oogway.png")){
+ 
+  return 7*ValorApostado;
+  }
+  
+  if(Personagem.includes("mestre_shifu.png")){
+ 
+  return 6*ValorApostado;
+  }
+
+  if(Personagem.includes("tigressa.png")){
+  
+  return 5*ValorApostado;
+  }
+  
+  if(Personagem.includes("mestre_macaco.png")){
+ 
+  return 4*ValorApostado;
+  }
+  
+  if(Personagem.includes("garca.png.png")){
+ 
+  return 3*ValorApostado;
+  }
+
+  if(Personagem.includes("louva_deus.png")){
+ 
+  return 2*ValorApostado;
+  }
+  
+  if(Personagem.includes("mestre_vibora.png")){
+ 
+  return 1*ValorApostado;
+  }
+  
+  
+  }
+  
+  
+  function GetNumberFormat(){
+  const formatter = new Intl.NumberFormat('pt-BR', {
+  style: 'currency',
+  currency: 'BRL',
+  });
+
+  return formatter;
+  
+  }
   /*
         const player = new Parse.Object("UserGame");
 
