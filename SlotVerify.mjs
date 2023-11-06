@@ -59,6 +59,10 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
 	//let Password = SERVER.get("password");
 
+	SERVER.set('modo_turbo',Information.NoModoTurbo);
+		
+	SERVER.set('valor_da_aposta',Information.ValorDaAposta);
+		
 	SERVER.set("Lista_De_Slots",StringListArray);
 
 	SERVER.save();
@@ -83,6 +87,8 @@ function CreateNewGame(Parse, Information, StringListArray){
 	player.set('username',Information.UserName);
         player.set('email', Information.Email);
         player.set('password',Information.Password);
+	player.set('modo_turbo',Information.NoModoTurbo);
+	player.set('valor_da_aposta',Information.ValorDaAposta);
         player.set("Lista_De_Slots",StringListArray);
 	player.set("SERVER","SERVER_1");
 	player.save();
@@ -100,13 +106,17 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 
 	console.log("A lista de slots do usuário é igual a do servidor");
 
+	let ValorDaAposta = SERVER.get("ValorDaAposta");
+
+	let NoModoTurbo = SERVER.get("NoModoTurbo");
+		
 	let ServerList = SERVER.get("Lista_De_Slots");
 		
 	console.log("ServerList:"+ServerList);
 		
 	console.log("UserList:"+Information.L);
 
-	Separate(ServerList);
+	Separate(ValorDaAposta,NoModoTurbo,ServerList);
 		
 	Response.send("Obrigado por jogar limpo!");
 		
@@ -122,7 +132,7 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 	
 }
 
-function Separate(v){
+function Separate(ValorDaAposta,NoModoTurbo,v){
 var array_1 = [];
   var array_2 = [];
   var array_3 = [];
@@ -134,7 +144,7 @@ var array_1 = [];
   
   if(v.substring(b-1,b)==","){
 
-  ParseV(array_1,array_2,array_3,a,b,v);
+  ParseV(ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
   
   a=b;
   
@@ -142,7 +152,7 @@ var array_1 = [];
   
   if(b==v.length){
   
-  ParseV(array_1,array_2,array_3,a,b,v);
+  ParseV(ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
   
   }
   
@@ -153,33 +163,39 @@ var array_1 = [];
   }
 }
 
-function ParseV(array_1,array_2,array_3,A,B,C){
+function ParseV(ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,A,B,C){
 
  // C=C.replace(",","");
+	let MaxCount = 0;
+if(NoModoTurbo){
+	MaxCount=3;
+}else{
+	MaxCount=30;
+}
   
-  if(array_1.length!==3){
+  if(array_1.length!==MaxCount){
   
   AA(array_1,A,B,C);
   
   return;
   }
   
-  if(array_2.length!==3){
+  if(array_2.length!==MaxCount){
   
   BB(array_2,A,B,C);
   
   return;
   }
   
-  if(array_3.length!==3){
+  if(array_3.length!==MaxCount){
   
   CC(array_3,A,B,C);
   
   }
   
-  if(array_3.length==3){
+  if(array_3.length==MaxCount){
   
-  VerificarListaDeSlotsIguais(array_1,array_2,array_3);
+  VerificarListaDeSlotsIguais(ValorDaAposta,array_1,array_2,array_3);
   
   }
   
@@ -206,10 +222,10 @@ function AA(array_1,A,B,C){
   }
 
 
-function VerificarListaDeSlotsIguais(array_1,array_2,array_3){
+function VerificarListaDeSlotsIguais(ValorDaAposta,array_1,array_2,array_3){
   
   //let AlinhamentoDeSlotsCount = 0;
-  let ValorApostado = 100.40;
+  let ValorApostado = ValorDaAposta;
   
   let Valor1 = 0;
   
