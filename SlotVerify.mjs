@@ -333,7 +333,7 @@ function VerificarListaDeSlotsIguais(Response, ValorDaCarteira,ValorDaAposta,arr
 
   console.log(formated2);
 
-  Response.send(formated2);
+  Response.send(formated1+"|"+formated2);
   
   }
   
