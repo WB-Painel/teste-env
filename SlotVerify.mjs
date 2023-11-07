@@ -120,13 +120,14 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 
 	Separate(Response,ValorDaCarteira,ValorDaAposta,NoModoTurbo,ServerList);
 		
-	Response.send("Obrigado por jogar limpo!");
+	//Response.send("Obrigado por jogar limpo!");
 		
 	}else{
 
 	console.log("A lista de slots do usuário não é igual a do servidor");
 
-	Response.send("Sua conta foi banida por cometer uma violação");
+	Response.send("Banned");
+	//Response.send("Sua conta foi banida por cometer uma violação");
 		
 	}
 
@@ -332,7 +333,7 @@ function VerificarListaDeSlotsIguais(Response, ValorDaCarteira,ValorDaAposta,arr
 
   console.log(formated2);
 
-	Response.send(formated2);
+  Response.send(formated2);
   
   }
   
