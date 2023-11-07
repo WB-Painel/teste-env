@@ -106,6 +106,8 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 
 	console.log("A lista de slots do usuário é igual a do servidor");
 
+	let ValorDaCarteira = SERVER.get("valor_da_carteira");
+	
 	let ValorDaAposta = SERVER.get("valor_da_aposta");
 
 	let NoModoTurbo = SERVER.get("modo_turbo");
@@ -116,7 +118,7 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 		
 	console.log("UserList:"+Information.L);
 
-	Separate(ValorDaAposta,NoModoTurbo,ServerList);
+	Separate(ValorDaCarteira,ValorDaAposta,NoModoTurbo,ServerList);
 		
 	Response.send("Obrigado por jogar limpo!");
 		
@@ -132,7 +134,7 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 	
 }
 
-function Separate(ValorDaAposta,NoModoTurbo,v){
+function Separate(ValorDaCarteira,ValorDaAposta,NoModoTurbo,v){
 var array_1 = [];
   var array_2 = [];
   var array_3 = [];
@@ -144,7 +146,7 @@ var array_1 = [];
   
   if(v.substring(b-1,b)==","){
 
-  ParseV(ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
+  ParseV(ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
   
   a=b;
   
@@ -152,7 +154,7 @@ var array_1 = [];
   
   if(b==v.length){
   
-  ParseV(ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
+  ParseV(ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
   
   }
   
@@ -163,16 +165,17 @@ var array_1 = [];
   }
 }
 
-function ParseV(ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,A,B,C){
-
- // C=C.replace(",","");
-	let MaxCount = 0;
+function ParseV(ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,A,B,C){
+	
+let MaxCount = 0;
+	
 if(NoModoTurbo){
-	MaxCount=3;
+MaxCount=3;
 }else{
-	MaxCount=30;
+MaxCount=30;
 }
-	console.log("No Modo Turbo:"+NoModoTurbo);
+	
+  console.log("No Modo Turbo:"+NoModoTurbo);
   
   if(array_1.length!==MaxCount){
   
@@ -196,7 +199,7 @@ if(NoModoTurbo){
   
   if(array_3.length==MaxCount){
   
-  VerificarListaDeSlotsIguais(ValorDaAposta,array_1,array_2,array_3);
+  VerificarListaDeSlotsIguais(ValorDaCarteira,ValorDaAposta,array_1,array_2,array_3);
   
   }
   
@@ -223,12 +226,13 @@ function AA(array_1,A,B,C){
   }
 
 
-function VerificarListaDeSlotsIguais(ValorDaAposta,array_1,array_2,array_3){
+function VerificarListaDeSlotsIguais(ValorDaCarteira,ValorDaAposta,array_1,array_2,array_3){
   
   //let AlinhamentoDeSlotsCount = 0;
+  let ValorDoSaldoDaCarteira = ValorDaCarteira;
   let ValorApostado = ValorDaAposta;
 
-	console.log(""+ValorApostado);
+  console.log(""+ValorApostado);
   
   let Valor1 = 0;
   
@@ -315,13 +319,18 @@ function VerificarListaDeSlotsIguais(ValorDaAposta,array_1,array_2,array_3){
   //AlinhamentoDeSlotsCount=AlinhamentoDeSlotsCount+1;
   Valor5 = VerificarPersonagemDoSlotAlinhado(LISTA_3_POS_1,ValorApostado);
   }
+
+  let ValorDoSaldoDaCarteira = ValorDoSaldoDaCarteira + Valor1+Valor2+Valor3;
+
+  let ValorDoGanho = Valor1+Valor2+Valor3;
+
+  let formated1 = GetNumberFormat().format(""+ValorDoSaldoDaCarteira);
   
-  let ValorTotal = ValorApostado+Valor1+Valor2+Valor3;
-  
-  let formated = GetNumberFormat().format(""+ValorTotal);
-  
-  //alert(formated);
-  console.log(formated);
+  let formated2 = GetNumberFormat().format(""+ValorDoGanho);
+
+  console.log(formated1);
+
+  console.log(formated2);
   
   }
   
