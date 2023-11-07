@@ -60,7 +60,7 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	//let Password = SERVER.get("password");
 	let VALOR_DA_CARTEIRA = SERVER.get("valor_da_carteira");
 
-	if(VALOR_DA_CARTEIRA==Information.ValorDaAposta){
+	if(VALOR_DA_CARTEIRA>Information.ValorDaAposta||VALOR_DA_CARTEIRA==Information.ValorDaAposta){
 	
 	SERVER.set('valor_da_carteira',VALOR_DA_CARTEIRA-Information.ValorDaAposta);
 
