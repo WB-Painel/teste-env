@@ -58,6 +58,9 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	//let Email = SERVER.get("email");
 
 	//let Password = SERVER.get("password");
+	let VALOR_DA_CARTEIRA = SERVER.get("valor_da_carteira");
+
+	SERVER.set('valor_da_carteira',VALOR_DA_CARTEIRA-Information.ValorDaAposta);
 
 	SERVER.set('modo_turbo',Information.NoModoTurbo);
 		
