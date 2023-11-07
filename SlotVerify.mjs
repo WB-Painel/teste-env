@@ -118,7 +118,7 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 		
 	console.log("UserList:"+Information.L);
 
-	Separate(ValorDaCarteira,ValorDaAposta,NoModoTurbo,ServerList);
+	Separate(Response,ValorDaCarteira,ValorDaAposta,NoModoTurbo,ServerList);
 		
 	Response.send("Obrigado por jogar limpo!");
 		
@@ -134,7 +134,7 @@ export function VSOSDUEOMDS(Parse,Information,Response){
 	
 }
 
-function Separate(ValorDaCarteira,ValorDaAposta,NoModoTurbo,v){
+function Separate(Response, ValorDaCarteira,ValorDaAposta,NoModoTurbo,v){
 var array_1 = [];
   var array_2 = [];
   var array_3 = [];
@@ -146,7 +146,7 @@ var array_1 = [];
   
   if(v.substring(b-1,b)==","){
 
-  ParseV(ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
+  ParseV(Response, ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
   
   a=b;
   
@@ -154,7 +154,7 @@ var array_1 = [];
   
   if(b==v.length){
   
-  ParseV(ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
+  ParseV(Response, ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,a,b,v);
   
   }
   
@@ -165,7 +165,7 @@ var array_1 = [];
   }
 }
 
-function ParseV(ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,A,B,C){
+function ParseV(Response, ValorDaCarteira,ValorDaAposta,NoModoTurbo,array_1,array_2,array_3,A,B,C){
 	
 let MaxCount = 0;
 	
@@ -199,7 +199,7 @@ MaxCount=30;
   
   if(array_3.length==MaxCount){
   
-  VerificarListaDeSlotsIguais(ValorDaCarteira,ValorDaAposta,array_1,array_2,array_3);
+  VerificarListaDeSlotsIguais(Response, ValorDaCarteira,ValorDaAposta,array_1,array_2,array_3);
   
   }
   
@@ -226,7 +226,7 @@ function AA(array_1,A,B,C){
   }
 
 
-function VerificarListaDeSlotsIguais(ValorDaCarteira,ValorDaAposta,array_1,array_2,array_3){
+function VerificarListaDeSlotsIguais(Response, ValorDaCarteira,ValorDaAposta,array_1,array_2,array_3){
   
   //let AlinhamentoDeSlotsCount = 0;
   let ValorDoSaldoDaCarteira = ValorDaCarteira;
@@ -331,6 +331,8 @@ function VerificarListaDeSlotsIguais(ValorDaCarteira,ValorDaAposta,array_1,array
   console.log(formated1);
 
   console.log(formated2);
+
+	Response.send(formated2);
   
   }
   
