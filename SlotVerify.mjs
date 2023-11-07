@@ -1,5 +1,5 @@
 
-export function Verify(ArrayDeSlots,Information,Parse){
+export function Verify(Response, ArrayDeSlots,Information,Parse){
  
   //import Parse from "parse/node.js";
   
@@ -35,11 +35,11 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
   console.log(StringListArray);
 
- updatePlayer(Information,Parse,StringListArray);
+ updatePlayer(Response, Information,Parse,StringListArray);
 
 }
  
- async function updatePlayer(Information,Parse,StringListArray) {
+ async function updatePlayer(Response, Information,Parse,StringListArray) {
         //Retrieve your Parse Object
 	let server = new Parse.Query("UserGame");
 	
@@ -72,6 +72,8 @@ export function Verify(ArrayDeSlots,Information,Parse){
 
 	SERVER.save();
 
+		Response.send("CONNECTION_OK");
+
 	}
 	
 
@@ -82,6 +84,8 @@ export function Verify(ArrayDeSlots,Information,Parse){
 	console.log("F");
 
         CreateNewGame(Parse, Information, StringListArray);
+
+		Response.send("CONNECTION_OK");
 	
 	}
 		
