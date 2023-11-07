@@ -320,7 +320,7 @@ function VerificarListaDeSlotsIguais(ValorDaCarteira,ValorDaAposta,array_1,array
   Valor5 = VerificarPersonagemDoSlotAlinhado(LISTA_3_POS_1,ValorApostado);
   }
 
-  let ValorDoSaldoDaCarteira = ValorDoSaldoDaCarteira + Valor1+Valor2+Valor3;
+  ValorDoSaldoDaCarteira = ValorDoSaldoDaCarteira + Valor1+Valor2+Valor3;
 
   let ValorDoGanho = Valor1+Valor2+Valor3;
 
